@@ -15,8 +15,8 @@
         <vm:MainViewModel />
     </Design.DataContext>
 
-    <TextBox Text="{Binding Greeting}"
+    <TextBox Text="Finanz Manager"
              HorizontalAlignment="Center"
-             VerticalAlignment="Center" />
+             VerticalAlignment="Center" IsReadOnly="True" />
 
 </Window>
