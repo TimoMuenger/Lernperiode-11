@@ -14,9 +14,20 @@
              to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
         <vm:MainViewModel />
     </Design.DataContext>
-
-    <TextBox Text="Finanz Manager"
-             HorizontalAlignment="Center"
-             VerticalAlignment="Center" IsReadOnly="True" />
-
+<StackPanel>
+    <TextBlock Text="Finanz Manager" HorizontalAlignment="Center" VerticalAlignment="Top" FontWeight="Bold" FontSize="20"> </TextBlock>
+    <TextBlock Text="Enter amount to add to your balance:" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+    <Grid ShowGridLines="False" Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center" 
+          ColumnDefinitions="150, 150" ColumnSpacing="0"
+          RowDefinitions="25, 35">
+          <TextBlock Text="Total Income:" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0"/>
+          <TextBlock Text="Total Expenses:" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0"/>
+          <TextBlock Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Text="..."> </TextBlock>
+          <TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Text="..."> </TextBlock>
+    </Grid>
+    <TextBlock Text="Total Balance:" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0"/>
+    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="..."> </TextBlock>
+    
+    
+</StackPanel>
 </Window>

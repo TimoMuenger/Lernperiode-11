@@ -26,6 +26,9 @@
 - [ ] Als User möchte ich mit den Elementen auf dem Screen interagieren können, damit man Zahlen eintippen kann
 - [ ] Als User möchte ich eine Ausgabe mit z.B. dem aktuellen Kontostand haben, damit man eine Grobübersicht hat
 
-✍️ Heute habe ich das Beginner-Tutorial abgeschlossen und einzelne erweiterungs Tutorials angeschaut. Dazu habe ich mir schonmal ein Neues Projekt für den Finanzmanager angelegt.
+✍️ Heute habe ich das Beginner-Tutorial abgeschlossen und einzelne erweiterungs Tutorials angeschaut. Dazu habe ich mir schonmal ein Neues Projekt für den Finanzmanager angelegt. Ich habe dazu die ganzen UI Elemente hinzugefügte wobei ich beim Layout zuerst Schwierigkeiten hatte wie ich das ganze anordnen soll.
 
+## 28.8
 
+- [ ] Als User möchte ich aus den eingegebenen Zahlen einen Output haben, damit ich die Übersicht habe
+- [ ] Als User möchte ich, dass mein Kontostand gespeichert wird, damit ich die App schliessen kann
