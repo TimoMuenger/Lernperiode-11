@@ -30,5 +30,13 @@
 
 ## 28.8
 
-- [ ] Als User möchte ich aus den eingegebenen Zahlen einen Output haben, damit ich die Übersicht habe
-- [ ] Als User möchte ich, dass mein Kontostand gespeichert wird, damit ich die App schliessen kann
+- [x] Als User möchte ich aus den eingegebenen Zahlen einen Output haben, damit ich die Übersicht habe
+- [x] Als User möchte ich, dass mein Kontostand gespeichert wird, damit ich die App schliessen kann
+
+✍️ Heute habe ich die Eingabe fertig gemacht. Man kann jetzt einen Betrag eintippen und mit den zwei Buttons als Einnahme oder Ausgabe verbuchen. Die Totale und der Kontostand rechnen sich automatisch aus und werden angezeigt. Zum Schluss habe ich das Speichern eingebaut, die Zahlen werden in eine Textdatei im AppData Ordner geschrieben und beim Starten wieder geladen. So ist der Kontostand nach dem Schliessen noch da.
+
+## 4.9
+
+- [ ] Als User möchte ich eine Fehlermeldung sehen, wenn meine Eingabe keine gültige Zahl ist, damit ich merke was falsch ist
+- [ ] Als User möchte ich die Beträge mit Währung und zwei Nachkommastellen sehen, damit es übersichtlicher ist
+- [ ] Als User möchte ich eine Liste meiner einzelnen Buchungen sehen, damit ich weiss woher mein Kontostand kommt
