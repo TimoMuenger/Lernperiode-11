@@ -20,6 +20,7 @@
         <Button Content="Income" Command="{Binding AddIncomeCommand}"/>
         <Button Content="Expense" Command="{Binding AddExpenseCommand}"/>
     </StackPanel>
+    <TextBlock Text="{Binding ErrorMessage}" Foreground="Red" HorizontalAlignment="Center"/>
     <Grid ShowGridLines="False" Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center" 
           ColumnDefinitions="150, 150" ColumnSpacing="0"
           RowDefinitions="25, 35">

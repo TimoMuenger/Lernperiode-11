@@ -37,6 +37,6 @@
 
 ## 4.9
 
-- [ ] Als User möchte ich eine Fehlermeldung sehen, wenn meine Eingabe keine gültige Zahl ist, damit ich merke was falsch ist
+- [x] Als User möchte ich eine Fehlermeldung sehen, wenn meine Eingabe keine gültige Zahl ist, damit ich merke was falsch ist
 - [ ] Als User möchte ich die Beträge mit Währung und zwei Nachkommastellen sehen, damit es übersichtlicher ist
 - [ ] Als User möchte ich eine Liste meiner einzelnen Buchungen sehen, damit ich weiss woher mein Kontostand kommt

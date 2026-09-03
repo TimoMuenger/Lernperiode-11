@@ -15,6 +15,9 @@ public partial class MainViewModel : ViewModelBase
     public partial string AmountInput { get; set; } = "";
 
     [ObservableProperty]
+    public partial string ErrorMessage { get; set; } = "";
+
+    [ObservableProperty]
     [NotifyPropertyChangedFor(nameof(Balance))]
     public partial decimal TotalIncome { get; set; }
 
@@ -44,8 +47,12 @@ public partial class MainViewModel : ViewModelBase
     private void AddIncome()
     {
         if (!decimal.TryParse(AmountInput, out var amount))
+        {
+            ErrorMessage = "Bitte eine gültige Zahl eingeben";
             return;
+        }
 
+        ErrorMessage = "";
         TotalIncome += amount;
         AmountInput = "";
         Save();
@@ -55,8 +62,12 @@ public partial class MainViewModel : ViewModelBase
     private void AddExpense()
     {
         if (!decimal.TryParse(AmountInput, out var amount))
+        {
+            ErrorMessage = "Bitte eine gültige Zahl eingeben";
             return;
+        }
 
+        ErrorMessage = "";
         TotalExpenses += amount;
         AmountInput = "";
         Save();
