@@ -38,5 +38,13 @@
 ## 4.9
 
 - [x] Als User möchte ich eine Fehlermeldung sehen, wenn meine Eingabe keine gültige Zahl ist, damit ich merke was falsch ist
-- [ ] Als User möchte ich die Beträge mit Währung und zwei Nachkommastellen sehen, damit es übersichtlicher ist
-- [ ] Als User möchte ich eine Liste meiner einzelnen Buchungen sehen, damit ich weiss woher mein Kontostand kommt
+- [x] Als User möchte ich die Beträge mit Währung und zwei Nachkommastellen sehen, damit es übersichtlicher ist
+- [x] Als User möchte ich eine Liste meiner einzelnen Buchungen sehen, damit ich weiss woher mein Kontostand kommt
+
+✍️ Heute habe ich die App benutzerfreundlicher gemacht. Zuerst habe ich eine Fehlermeldung eingebaut, die rot erscheint wenn man etwas eintippt das keine Zahl ist. Danach habe ich die Beträge direkt im Binding mit StringFormat formatiert, so werden sie jetzt mit zwei Nachkommastellen und CHF angezeigt. Zum Schluss habe ich eine Liste der einzelnen Buchungen hinzugefügt. Dafür musste ich das Speichern umbauen, es wird nicht mehr nur das Total gespeichert sondern jede Buchung einzeln in einer eigenen Zeile. Die Totale und der Kontostand rechnen sich jetzt aus dieser Liste aus.
+
+## 11.9
+
+- [ ] Als User möchte ich eine einzelne Buchung löschen können, damit ich Fehleingaben korrigieren kann
+- [ ] Als User möchte ich zu jeder Buchung eine kurze Beschreibung eingeben, damit ich weiss wofür der Betrag war
+- [ ] Als User möchte ich die App als fertige exe starten können, damit ich sie ohne Visual Studio benutzen kann

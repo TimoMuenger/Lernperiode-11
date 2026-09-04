@@ -1,5 +1,7 @@
 using System;
+using System.Collections.ObjectModel;
 using System.IO;
+using System.Linq;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 
@@ -17,30 +19,22 @@ public partial class MainViewModel : ViewModelBase
     [ObservableProperty]
     public partial string ErrorMessage { get; set; } = "";
 
-    [ObservableProperty]
-    [NotifyPropertyChangedFor(nameof(Balance))]
-    public partial decimal TotalIncome { get; set; }
+    public ObservableCollection<decimal> Transactions { get; } = new();
 
-    [ObservableProperty]
-    [NotifyPropertyChangedFor(nameof(Balance))]
-    public partial decimal TotalExpenses { get; set; }
+    public decimal TotalIncome => Transactions.Where(a => a > 0).Sum();
 
-    public decimal Balance => TotalIncome - TotalExpenses;
+    public decimal TotalExpenses => -Transactions.Where(a => a < 0).Sum();
+
+    public decimal Balance => Transactions.Sum();
 
     public MainViewModel()
     {
         if (!File.Exists(FilePath))
             return;
 
-        var parts = File.ReadAllText(FilePath).Split(';');
-        if (parts.Length != 2)
-            return;
-
-        decimal.TryParse(parts[0], out var income);
-        decimal.TryParse(parts[1], out var expenses);
-
-        TotalIncome = income;
-        TotalExpenses = expenses;
+        foreach (var line in File.ReadAllLines(FilePath))
+            if (decimal.TryParse(line, out var amount))
+                Transactions.Add(amount);
     }
 
     [RelayCommand]
@@ -53,7 +47,7 @@ public partial class MainViewModel : ViewModelBase
         }
 
         ErrorMessage = "";
-        TotalIncome += amount;
+        Transactions.Add(amount);
         AmountInput = "";
         Save();
     }
@@ -68,10 +62,16 @@ public partial class MainViewModel : ViewModelBase
         }
 
         ErrorMessage = "";
-        TotalExpenses += amount;
+        Transactions.Add(-amount);
         AmountInput = "";
         Save();
     }
 
-    private void Save() => File.WriteAllText(FilePath, $"{TotalIncome};{TotalExpenses}");
+    private void Save()
+    {
+        File.WriteAllLines(FilePath, Transactions.Select(a => a.ToString()));
+        OnPropertyChanged(nameof(TotalIncome));
+        OnPropertyChanged(nameof(TotalExpenses));
+        OnPropertyChanged(nameof(Balance));
+    }
 }
