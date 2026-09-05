@@ -32,12 +32,13 @@
     </Grid>
     <TextBlock Text="Total Balance:" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0"/>
     <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="{Binding Balance, StringFormat='{}{0:0.00} CHF'}"> </TextBlock>
-    <ItemsControl ItemsSource="{Binding Transactions}" HorizontalAlignment="Center" Margin="5">
-        <ItemsControl.ItemTemplate>
+    <ListBox ItemsSource="{Binding Transactions}" SelectedIndex="{Binding SelectedIndex}" MaxHeight="150" Margin="5">
+        <ListBox.ItemTemplate>
             <DataTemplate x:DataType="sys:Decimal">
-                <TextBlock Text="{Binding StringFormat='{}{0:0.00} CHF'}" HorizontalAlignment="Center"/>
+                <TextBlock Text="{Binding StringFormat='{}{0:0.00} CHF'}"/>
             </DataTemplate>
-        </ItemsControl.ItemTemplate>
-    </ItemsControl>
+        </ListBox.ItemTemplate>
+    </ListBox>
+    <Button Content="Löschen" Command="{Binding DeleteCommand}" HorizontalAlignment="Center"/>
 </StackPanel>
 </Window>

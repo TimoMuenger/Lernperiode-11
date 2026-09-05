@@ -45,6 +45,6 @@
 
 ## 11.9
 
-- [ ] Als User möchte ich eine einzelne Buchung löschen können, damit ich Fehleingaben korrigieren kann
+- [x] Als User möchte ich eine einzelne Buchung löschen können, damit ich Fehleingaben korrigieren kann
 - [ ] Als User möchte ich zu jeder Buchung eine kurze Beschreibung eingeben, damit ich weiss wofür der Betrag war
 - [ ] Als User möchte ich die App als fertige exe starten können, damit ich sie ohne Visual Studio benutzen kann

@@ -19,6 +19,9 @@ public partial class MainViewModel : ViewModelBase
     [ObservableProperty]
     public partial string ErrorMessage { get; set; } = "";
 
+    [ObservableProperty]
+    public partial int SelectedIndex { get; set; } = -1;
+
     public ObservableCollection<decimal> Transactions { get; } = new();
 
     public decimal TotalIncome => Transactions.Where(a => a > 0).Sum();
@@ -64,6 +67,16 @@ public partial class MainViewModel : ViewModelBase
         ErrorMessage = "";
         Transactions.Add(-amount);
         AmountInput = "";
+        Save();
+    }
+
+    [RelayCommand]
+    private void Delete()
+    {
+        if (SelectedIndex < 0)
+            return;
+
+        Transactions.RemoveAt(SelectedIndex);
         Save();
     }
 
